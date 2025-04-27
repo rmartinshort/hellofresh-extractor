@@ -172,3 +172,4 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+/hellofresh_extractor/hellofresh_extractor/gsuite/credentials/
