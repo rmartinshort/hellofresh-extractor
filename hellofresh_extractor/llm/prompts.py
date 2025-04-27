@@ -14,8 +14,12 @@ all of this information to help answer the user's question
 """
 
 multimodal_user_query = """
-Give the title and all the ingredients in this recipe. 
-For each ingredient, please also include the specified amount for a two-person meal
+Give the title, all the ingredients, the prep time, cook time and calories in this recipe. 
+For each ingredient, please also include the specified amount for a two-person meal. 
+If the unit it present, also include it in that field, for example if you see
+"Grape Tomatoes, 8 oz (1 cup)", you should extract the following
+ingredient_name = "Grape Tomatoes"
+ingredient_amount = "8oz (1 cup)"
 """
 
 structured_system_prompt = """

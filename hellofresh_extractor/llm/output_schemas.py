@@ -14,3 +14,6 @@ class ExtractedMealTitle(BaseModel):
 class ExtractedMeal(BaseModel):
     title: str
     ingredients: List[Ingredient]
+    preparation_time: str
+    cooking_time: str
+    calories: str

@@ -18,7 +18,6 @@ def convert_structured_result_to_df(structured_result):
                 "title": json_data["title"],
                 "ingredient_name": ingredient["name"],
                 "ingredient_amount": ingredient["amount"],
-                "ingredient_amount_unit": ingredient["unit"],
             }
         )
 
