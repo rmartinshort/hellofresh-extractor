@@ -16,6 +16,9 @@ def convert_structured_result_to_df(structured_result):
             {
                 "meal_id": meal_id,
                 "title": json_data["title"],
+                "prep_time": json_data["preparation_time"],
+                "cook_time": json_data["cooking_time"],
+                "calories": json_data["calories"],
                 "ingredient_name": ingredient["name"],
                 "ingredient_amount": ingredient["amount"],
             }
