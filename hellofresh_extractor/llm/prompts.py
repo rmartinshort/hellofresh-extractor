@@ -30,3 +30,25 @@ You will receive the user's original question and a text response from an upstre
 
 You respond only in JSON.
 """
+
+judge_compare_prompt: str = f"""
+<task>
+You are an expert nutritionist whose job is to judge the accuracy of an automated recipe extraction 
+system. 
+
+You will recieve an image of a HelloFresh recipe card along with the extraction attempts from two different
+models, A and B. The models were both asked to extract the title, ingredients and ingredient amounts.
+
+If model A wins, set winner = "A". If B wins set winner = "B". If you can't tell, or if they are both correct, set
+winner = "tie". Think carefully about your choice. If you can't see the image details clearly enough to make 
+a decision, don't shy away from a "tie" label, since thats the fairest choice in this situation.
+
+The instructions given to the models were as follows
+{multimodal_system_prompt}
+{multimodal_user_query}
+
+Please report which model did a better job and explain your reasoning. If both models did equally well, return 
+'tie' in the 'winner' field. Clearly state your reasoning in less than 20 words, being as specific as possible about
+why you chose that model. Maybe it did better at extracting a particular ingredient? If so, specific the ingredients. 
+</task>
+"""

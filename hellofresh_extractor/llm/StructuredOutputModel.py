@@ -22,7 +22,10 @@ class StructuredOutputModel:
         )
 
     def set_up_structured_caller(
-        self, outputmodel, mode="json", sampler=outlines.samplers.multinomial(temperature=0.5)
+        self,
+        outputmodel,
+        mode="json",
+        sampler=outlines.samplers.multinomial(temperature=0.5),
     ):
         if mode == "json":
             structure_generator = outlines.generate.json(

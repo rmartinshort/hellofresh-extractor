@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from typing import List
 
 
@@ -17,3 +17,10 @@ class ExtractedMeal(BaseModel):
     preparation_time: str
     cooking_time: str
     calories: str
+
+
+class JudgeModel(BaseModel):
+    winner: str = Field(
+        description="Indicate which model is better. Should be 'A', 'B' or 'tie'"
+    )
+    reasoning: str = Field(description="Your short explanation of your choice of model")
